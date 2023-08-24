@@ -38,7 +38,7 @@ Use the @tailwind directive to insert Tailwind’s base, components, utilities a
  */
 @tailwind variants;
 ​
-@layer
+# @layer
 Use the @layer directive to tell Tailwind which “bucket” a set of custom styles belong to. Valid layers are base, components, and utilities.
 
 @tailwind base;
