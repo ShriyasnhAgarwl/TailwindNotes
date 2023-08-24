@@ -1,4 +1,4 @@
-Core Concepts
+## Core Concepts
 
 Functions & Directives
 A reference for the custom functions and directives Tailwind exposes to your CSS.
