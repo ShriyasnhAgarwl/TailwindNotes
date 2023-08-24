@@ -70,12 +70,12 @@ Use the @layer directive to tell Tailwind which “bucket” a set of custom sty
 }
 Tailwind will automatically move the CSS within any @layer directive to the same place as the corresponding @tailwind rule, so you don’t have to worry about authoring your CSS in a specific order to avoid specificity issues.
 
-Any custom CSS added to a layer will only be included in the final build if that CSS is actually used in your HTML, just like all of the classes built in to Tailwind by default.
+Any custom CSS added to a layer will only be included in the final build if that CSS is actually used in your HTML, just like all of the classes built into Tailwind by default.
 
-Wrapping any custom CSS with @layer also makes it possible to use modifiers with those rules, like hover: and focus: or responsive modifiers like md: and lg:.
+Wrapping any custom CSS with @layer also makes it possible to use modifiers with those rules, like hover and focus or responsive modifiers like md and lg.
 
 ​
-@apply
+# @apply
 Use @apply to inline any existing utility classes into your own custom CSS.
 
 This is useful when you need to write custom CSS (like to override the styles in a third-party library) but still want to work with your design tokens and use the same syntax you’re used to using in your HTML.
@@ -89,11 +89,11 @@ This is useful when you need to write custom CSS (like to override the styles in
 .select2-results__group {
   @apply text-lg font-bold text-gray-900;
 }
-Any rules inlined with @apply will have !important removed by default to avoid specificity issues:
+Any rules inlined with @apply will have! important removed by default to avoid specificity issues:
 
 /* Input */
 .foo {
-  color: blue !important;
+  color: blue! important;
 }
 
 .bar {
@@ -108,7 +108,7 @@ Any rules inlined with @apply will have !important removed by default to avoid s
 .bar {
   color: blue;
 }
-If you’d like to @apply an existing class and make it !important, simply add !important to the end of the declaration:
+### If you’d like to @apply an existing class and make it !important, simply add !important to the end of the declaration:
 
 /* Input */
 .btn {
@@ -130,7 +130,7 @@ Note that if you’re using Sass/SCSS, you’ll need to use Sass’ interpolatio
   @apply font-bold py-2 px-4 rounded #{!important};
 }
 ​
-Using @apply with per-component CSS
+# Using @apply with per-component CSS
 Component frameworks like Vue and Svelte support adding per-component styles within a <style> block that lives in each component file.
 
 If you try to @apply a custom class you’ve defined in your global CSS in one of these per-component <style> blocks, you’ll get an error about the class not existing:
@@ -188,7 +188,7 @@ This way any file processed by Tailwind that uses this config file will have acc
 Honestly though the best solution is to just not do weird stuff like this at all. Use Tailwind’s utilities directly in your markup the way they are intended to be used, and don’t abuse the @apply feature to do things like this and you will have a much better experience.
 
 ​
-@config
+# @config
 Use the @config directive to specify which config file Tailwind should use when compiling that CSS file. This is useful for projects that need to use different configuration files for different CSS entry points.
 
 
@@ -225,11 +225,11 @@ admin.css
 
 @config "./tailwind.admin.config.js";
 ​
-Functions
+# Functions
 Tailwind adds a few custom functions you can use in your CSS to access Tailwind-specific values. These functions are evaluated at build-time, and are replaced by static values in your final CSS.
 
 ​
-theme()
+- theme()
 Use the theme() function to access your Tailwind config values using dot notation.
 
 .content-area {
@@ -258,7 +258,7 @@ To adjust the opacity of a color retrieved with theme, use a slash followed by t
   background-color: theme(colors.blue.500 / 75%);
 }
 ​
-screen()
+- screen()
 The screen function allows you to create media queries that reference your breakpoints by name instead of duplicating their values in your own CSS.
 
 @media screen(sm) {
